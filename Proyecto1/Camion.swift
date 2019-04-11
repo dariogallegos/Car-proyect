@@ -8,19 +8,26 @@
 
 import Foundation
 
-class Camion{
+class Camion:Vehiculo{
     
     var taraMaxima: Int
     var espacio: Double
-    var kilometros: Int
     
-    init(taraMaxima: Int ,espacio: Double, kilometros: Int) {
+    init(fabricante: String,
+         modelo: String,
+         anyo:String,
+         kilometros: Int,
+         
+         taraMaxima: Int,
+         espacio: Double) {
+        
         self.taraMaxima = taraMaxima
         self.espacio = espacio
-        self.kilometros = kilometros
+        
+        super.init(fabricante: fabricante, modelo: modelo, anyo: anyo, kilometros: kilometros)
     }
     
-    var description: String{
+    override var description: String{
         return "La tara mámixa es  \(self.taraMaxima)con un espacio de  \(self.espacio) y kilometros \(self.kilometros)"
     }
     

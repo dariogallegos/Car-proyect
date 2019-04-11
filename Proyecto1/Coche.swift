@@ -8,20 +8,27 @@
 
 import Foundation
 
-class Coche:CustomStringConvertible {
+class Coche:Vehiculo{
  
-    
     let matricula: String?
     let puertas: Int
 
     
-    init(puertas: Int , matricula: String? = nil){
+    init(fabricante: String,
+        modelo: String,
+        anyo:String,
+        kilometros: Int,
+        puertas: Int ,
+        matricula: String? = nil){
+        
         self.puertas = puertas
         self.matricula = matricula
+        
+        super.init(fabricante: fabricante, modelo: modelo, anyo: anyo, kilometros: kilometros)
     }
     
-    var description: String{
-        return "soy un coche con \(String(describing: matricula)) y puertas \(puertas)"
+    override var description: String{
+        return "soy un coche con \(String(describing: modelo)) y puertas \(puertas)"
     }
 
 }

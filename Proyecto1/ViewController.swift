@@ -41,16 +41,17 @@ class ViewController: UIViewController {
         
         
         guard let modelo = textFieldModelo.text,
-            let matricula = textFieldMatricula.text,
-            let fabricante = textFieldFabricante.text,
-            let anyo = textFieldAnyo.text,
-            let precio = textFieldPrecio.text else {
-            
+              let fabricante = textFieldFabricante.text,
+              let anyo = textFieldAnyo.text,
+              !fabricante.isEmpty,
+              !modelo.isEmpty,
+              !anyo.isEmpty
+              else {
                 debugPrint("ha habido un problema")
                 return
         }
         
-        let coche = Coche(fabricante: fabricante, modelo: modelo, anyo: anyo, matricula: matricula, precio: Double(precio))
+        let coche = Coche(fabricante: fabricante, modelo: modelo, anyo: anyo, kilometros: 3000, puertas: 4)
 
         
         //arrayCoches.append(coche)

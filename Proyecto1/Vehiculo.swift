@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Vehiculo{
+class Vehiculo:CustomStringConvertible{
     
     var fabricante: String
     var modelo: String
